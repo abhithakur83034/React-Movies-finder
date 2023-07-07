@@ -1,27 +1,18 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useNavigate } from 'react-router-dom'
-import {
-  Navbar,
-  Container,
-  Nav,
-  Card,
-  CardGroup,
-  Row,
-  } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+import { Navbar, Container, Nav, Card, CardGroup, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
 
-// import { ToastContainer, toast } from "react-toastify";
 const Gene = () => {
-  const genData = useSelector((state)=>state.genData.data)
+  const genData = useSelector((state) => state.genData.data);
   const [filteredData, setFilteredData] = useState([]);
 
-
-  const navigate=useNavigate()
-  const logout=()=>{
+  const navigate = useNavigate();
+  const logout = () => {
     localStorage.clear();
-    navigate('/')
-  }
+    navigate("/");
+  };
 
   useEffect(() => {
     axios
@@ -38,11 +29,10 @@ const Gene = () => {
       });
   }, []);
 
-
   console.log(filteredData, ">>>>>>>");
   return (
     <Container fluid>
-      <Row >
+      <Row>
         <Navbar bg="dark" data-bs-theme="dark">
           <Container>
             <Navbar.Brand>Search your Movies Genres</Navbar.Brand>
@@ -51,14 +41,20 @@ const Gene = () => {
               <Nav className=" ">
                 <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="/dash">Back</Nav.Link>
-                <Nav.Link href="/" onClick={()=>{logout()}}>Logout</Nav.Link>
+                <Nav.Link
+                  href="/"
+                  onClick={() => {
+                    logout();
+                  }}
+                >
+                  Logout
+                </Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Container>
         </Navbar>
       </Row>
 
-      
       <Row className="ms-5">
         <CardGroup>
           {filteredData?.length !== 0 &&

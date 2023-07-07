@@ -24,62 +24,44 @@
   ],
   "users": [
     {
-      "email": "musk@gmail.com",
-      "password": "$2a$10$hrKtfZU7t1psgGY15hJsa.eJpx/QxW68cUU8I4/gvJDIaO9xfPbMS",
-      "name": "Muskan Singh",
-      "id": 1
+      "email": "e@gmail.com",
+      "password": "$2a$10$hMVLiDj734TwX2bGKifbdeJPyIBiwtiL5cBzLZVZU6m/MMNYdBZ6q",
+      "id": 1,
+      "roal": "Admin"
     },
     {
-      "name": "abhi",
-      "email": "a@gmail.com",
-      "password": "1234",
+      "email": "s@gmail.com",
+      "password": "$2a$10$yvi/FpqNWAhuf1WioQEs3eVHIy9E0WM7qrxxLNxA.bXKQ.ccFHwXm",
+      "name": "sam",
       "id": 2
     },
     {
-      "email": "e@gmail.com",
-      "password": "$2a$10$hMVLiDj734TwX2bGKifbdeJPyIBiwtiL5cBzLZVZU6m/MMNYdBZ6q",
+      "email": "aman@gmail.com",
+      "password": "$2a$10$WYxk3myf2nt.9hicogVpm.Vu6HI90hLVCCHw1nN4QDLyGXoUf4rqS",
+      "name": "aman",
       "id": 3
     },
     {
-      "email": "aman@gmail.com",
-      "password": "$2a$10$16.UjIjUgx/7gmW7YVNHOOP/5Tshv7JfYMuASn/uXXHZeCg7tN2KK",
-      "name": "aman",
+      "email": "raju@gmail.com",
+      "password": "$2a$10$vGMCNa5iMCpif3H74Vaq5.QVFoPGuhf3Z6OjDva92iu4Dxp4l9FHi",
+      "name": "raju",
       "id": 4
-    },
-    {
-      "email": "raj@gmail.com",
-      "password": "$2a$10$Bv1SleuoX125Q6iPCd3WB.4ETlJZr5xnHHtzCsVSZSBVS7R8Nf56C",
-      "name": "raj",
-      "id": 5
-    },
-    {
-      "email": "karan@gmail.com",
-      "password": "$2a$10$nXH6sx3P0T6ONV2Z1ZJec.jMRdDFrM2tdIHrABYC1XWtZu7XVoHHW",
-      "name": "karan",
-      "id": 6
-    },
-    {
-      "email": "aa@gmail.com",
-      "password": "$2a$10$I0i1Z9D4MEKYKK0RmuClJO0wA2uE9hhE5y0qN3n9x7JStRD3ELNLO",
-      "name": "arohi",
-      "id": 7
-    },
-    {
-      "email": "sa@gmail.com",
-      "password": "$2a$10$zbpz/aZvzqINbzhIkI9wAODdDAV/aeBuRzTg0NGCVOvnRvhHdW7z.",
-      "name": "sara",
-      "id": 8
-    },
-    {
-      "email": "samar@gmail.com",
-      "password": "$2a$10$wtoVwk8p9liU8e91sKiN5OeaNuKZpGmhKJqO0LeIPrsXGS0hEI/P.",
-      "name": "samar",
-      "id": 9
     }
   ],
   "movies": [
     {
-      "id": 1
+      "id": 1,
+      "title": "Scarface",
+      "year": "1983",
+      "runtime": "170",
+      "genres": [
+        "Crime",
+        "Drama"
+      ],
+      "director": "Brian De Palma",
+      "actors": "Al Pacino, Steven Bauer, Michelle Pfeiffer, Mary Elizabeth Mastrantonio",
+      "plot": "In Miami in 1980, a determined Cuban immigrant takes over a drug cartel and succumbs to greed.",
+      "posterUrl": "https://images-na.ssl-images-amazon.com/images/M/MV5BMjAzOTM4MzEwNl5BMl5BanBnXkFtZTgwMzU1OTc1MDE@._V1_SX300.jpg"
     },
     {
       "id": 2,
@@ -97,7 +79,19 @@
       "posterUrl": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTU5ODAyNzA4OV5BMl5BanBnXkFtZTcwNzYwNTIzNA@@._V1_SX300.jpg"
     },
     {
-      "id": 3
+      "id": 3,
+      "title": "Inception",
+      "year": "2010",
+      "runtime": "148",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Sci-Fi"
+      ],
+      "director": "Christopher Nolan",
+      "actors": "Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page, Tom Hardy",
+      "plot": "A thief, who steals corporate secrets through use of dream-sharing technology, is given the inverse task of planting an idea into the mind of a CEO.",
+      "posterUrl": "https://images-na.ssl-images-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg"
     },
     {
       "id": 4,
@@ -114,7 +108,19 @@
       "posterUrl": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTg0MTU1MTg4NF5BMl5BanBnXkFtZTgwMDgzNzYxMTE@._V1_SX300.jpg"
     },
     {
-      "id": 5
+      "id": 5,
+      "title": "The Silence of the Lambs",
+      "year": "1991",
+      "runtime": "118",
+      "genres": [
+        "Crime",
+        "Drama",
+        "Thriller"
+      ],
+      "director": "Jonathan Demme",
+      "actors": "Jodie Foster, Lawrence A. Bonney, Kasi Lemmons, Lawrence T. Wrentz",
+      "plot": "A young F.B.I. cadet must confide in an incarcerated and manipulative killer to receive his help on catching another serial killer who skins his victims.",
+      "posterUrl": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTQ2NzkzMDI4OF5BMl5BanBnXkFtZTcwMDA0NzE1NA@@._V1_SX300.jpg"
     },
     {
       "id": 6,
@@ -157,7 +163,7 @@
       "director": "Christopher Nolan",
       "actors": "Guy Pearce, Carrie-Anne Moss, Joe Pantoliano, Mark Boone Junior",
       "plot": "A man juggles searching for his wife's murderer and keeping his short-term memory loss from being an obstacle.",
-      "posterUrl": "https://images-na.ssl-images-amazon.com/images/M/MV5BNThiYjM3MzktMDg3Yy00ZWQ3LTk3YWEtN2M0YmNmNWEwYTE3XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"
+      "posterUrl": "https://images-na.ssl-images-amazon.com/images/M/MV5BN2ViYTFiZmUtOTIxZi00YzIxLWEyMzUtYjQwZGNjMjNhY2IwXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SX300.jpg"
     },
     {
       "id": 9,
@@ -172,7 +178,7 @@
       "director": "Olivier Nakache, Eric Toledano",
       "actors": "François Cluzet, Omar Sy, Anne Le Ny, Audrey Fleurot",
       "plot": "After he becomes a quadriplegic from a paragliding accident, an aristocrat hires a young man from the projects to be his caregiver.",
-      "posterUrl": "http://ia.media-imdb.com/images/M/MV5BMTYxNDA3MDQwNl5BMl5BanBnXkFtZTcwNTU4Mzc1Nw@@._V1_SX300.jpg"
+      "posterUrl": "http://ia.media-imdb.com/images/M/MV5BMTA2NDYxOGYtYjU1Mi00Y2QzLTgxMTQtMWI1MGI0ZGQ5MmU4XkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SX300.jpg"
     },
     {
       "id": 10,

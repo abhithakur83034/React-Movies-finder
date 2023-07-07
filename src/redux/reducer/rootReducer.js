@@ -5,4 +5,4 @@ const rootReducer = combineReducers({
     genData : genresReducer
 })
 
-export default rootReducer;
+export default rootReducer;  

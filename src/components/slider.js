@@ -1,5 +1,5 @@
 import React from 'react';
-import Carousel from 'react-bootstrap/Carousel';
+import {Carousel,Container} from 'react-bootstrap';
 
 
 const Slider =(props)=>{
@@ -7,7 +7,8 @@ const Slider =(props)=>{
     let {SlideData} = props
     return(
       
-      <Carousel>
+     <Container fluid>
+         <Carousel>
       {SlideData?.length !== 0 && SlideData?.map((item, index)=>{
           return(
               <Carousel.Item key={index}>
@@ -19,14 +20,14 @@ const Slider =(props)=>{
               width="100%"
               />
               <Carousel.Caption>
-             <h3>{item.title} </h3>
-              
+             <h3>{item.title} </h3>              
               <p>{item.actors}</p>
               </Carousel.Caption>
           </Carousel.Item>
           )
         })}  
         </Carousel>
+     </Container>
         
     )
 }

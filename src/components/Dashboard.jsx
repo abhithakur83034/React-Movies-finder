@@ -21,11 +21,11 @@ const Dashboard = (props) => {
   const [searchInput, setSearchInput] = useState([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState(false);
-  const navigate=useNavigate()
-  const logout=()=>{
+  const navigate = useNavigate();
+  const logout = () => {
     localStorage.clear();
-    navigate('/')
-  }
+    navigate("/");
+  };
 
   useEffect(() => {
     axios
@@ -77,7 +77,7 @@ const Dashboard = (props) => {
 
   return (
     <Container fluid>
-      <Row >
+      <Row>
         <Navbar bg="dark" data-bs-theme="dark">
           <Container>
             <Navbar.Brand>Dashboard</Navbar.Brand>
@@ -85,7 +85,13 @@ const Dashboard = (props) => {
             <Navbar.Collapse className="justify-content-end">
               <Nav className=" ">
                 <Nav.Link href="/">Back</Nav.Link>
-                <Nav.Link onClick={()=>{logout()}}>LogOut</Nav.Link>
+                <Nav.Link
+                  onClick={() => {
+                    logout();
+                  }}
+                >
+                  LogOut
+                </Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Container>
@@ -98,16 +104,18 @@ const Dashboard = (props) => {
       ) : (
         <>
           <Container fluid>
-            <Row >
+            <Row>
               <Col sm={2}>
                 <h3> Movies genres</h3>
-               
+
                 {genres.map((item, index) => {
                   return (
                     <div key={index}>
                       <Link
                         to="/gen"
-                        onClick={() => {props.comedyHandler(item)}}
+                        onClick={() => {
+                          props.comedyHandler(item);
+                        }}
                       >
                         {item}
                       </Link>
@@ -116,8 +124,8 @@ const Dashboard = (props) => {
                 })}
               </Col>
 
-              <Col sm={10} >
-                <Row  >
+              <Col sm={10}>
+                <Row>
                   <Form className="d-flex">
                     <Form.Control
                       type="search"
@@ -129,7 +137,7 @@ const Dashboard = (props) => {
                   </Form>
                 </Row>
                 {search && (
-                  <Row >
+                  <Row>
                     <CardGroup>
                       {searchInput?.length !== 0 &&
                         searchInput?.map((item, index) => {
@@ -152,12 +160,12 @@ const Dashboard = (props) => {
                   </Row>
                 )}
 
-                <Row >
+                <Row className="mt-2">
                   <div>
                     <Slider SlideData={data} />
                   </div>
                 </Row>
-                <Row >
+                <Row className="mt-2">
                   <CardGroup>
                     {data?.length !== 0 &&
                       data?.map((item, index) => {

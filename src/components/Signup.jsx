@@ -62,8 +62,7 @@ const Signup = () => {
                 <Card.Title>User SignUp</Card.Title>
                 <hr />
                 <>
-                {/* <Form> */}
-                <FloatingLabel
+                  <FloatingLabel
                     controlId="floatingInput"
                     label="User Name"
                     className="mb-3"
@@ -89,9 +88,7 @@ const Signup = () => {
                     />
                   </FloatingLabel>
 
-                  <FloatingLabel 
-                  controlId="floatingPassword"
-                   label="Password">
+                  <FloatingLabel controlId="floatingPassword" label="Password">
                     <Form.Control
                       type="password"
                       placeholder="password"
@@ -108,7 +105,6 @@ const Signup = () => {
                     SignUp
                   </Button>
                   <ToastContainer />
-                {/* </Form> */}
                 </>
               </Card.Body>
             </Card>

@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 import Slider from "./slider";
-import { Navbar, Container, Nav, Button } from "react-bootstrap";
+import { Navbar, Container, Nav, Button,Row } from "react-bootstrap";
 import "react-toastify/dist/ReactToastify.css";
 const Home = () => {
   const [data, setData] = useState([]);
-  let user = JSON.parse(window.localStorage.getItem('user'))
+  let user = JSON.parse(window.localStorage.getItem("user"));
+  const admin = JSON.parse(window.localStorage.getItem("admin"));
 
-  const navigate=useNavigate()
-  const logout=()=>{
-    localStorage.clear();
-    navigate('/')
-  }
-
+  const navigate = useNavigate();
+  const logout = () => {
+    localStorage.removeItem("user");
+    localStorage.removeItem("admin");
+    navigate("/");
+  };
 
   useEffect(() => {
     axios
@@ -29,51 +30,46 @@ const Home = () => {
 
   console.log("dataaaa", data);
   return (
-    <Container fluid >
-
-      <Navbar bg="dark" data-bs-theme="dark">
-        <Container >
-          <Navbar.Brand>Movies Finder App</Navbar.Brand>
-          <Navbar.Toggle />
-          <Navbar.Collapse className="justify-content-end">
-            <Nav className=" ">
-              {
-                user ?
-                <Nav.Link onClick={()=>{logout()}}>LogOut</Nav.Link>
-                :
+    <Container fluid>
+     <Row >
+     <Navbar bg="dark" data-bs-theme="dark">
+        
+        <Navbar.Brand className="ms-5" >Movies Finder App</Navbar.Brand>
+        <Navbar.Toggle />
+        <Navbar.Collapse className="justify-content-end">
+          <Nav className="me-5">
+            {user || admin ? (
+              <Nav.Link
+                onClick={() => {
+                  logout();
+                }}
+              >
+                LogOut
+              </Nav.Link>
+            ) : (
               <Nav.Link href="/signin">Signin</Nav.Link>
+            )}
+            {user || admin ? "" : <Nav.Link href="/signup">Signup</Nav.Link>}
+            {user || admin ? "" : <Nav.Link href="/admin">Adimn</Nav.Link>}
+          </Nav>
+        </Navbar.Collapse>
+     
+    </Navbar>
+     </Row>
 
-            }
-              {
-                user ?
-               ''
-                :
-                <Nav.Link href="/signup">Signup</Nav.Link>
-
-
-            }
-            {/* <Nav.Link href="/admin">Adimn</Nav.Link> */}
-            </Nav>
-          </Navbar.Collapse>
-        </Container >
-      </Navbar>
-      <div>
+      <div >
         <Slider SlideData={data} />
       </div>
-     {
-      user ? <Button
-      href="/dash"
-     variant='dark'
-      className="d-grid gap-2"
-      size="lg"
-    >
-      Dashboard
-    </Button>  :
-    ''
-     }
-   
-      </Container>
-
+     <Row>
+     {user || admin ? (
+        <Button href="/dash" variant="dark" className="d-grid gap-2" size="lg">
+          Dashboard
+        </Button>
+      ) : (
+        ""
+      )}
+     </Row>
+    </Container>
   );
 };
 

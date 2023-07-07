@@ -11,7 +11,7 @@ import {
   Col,
   Form,
   Card,
-  FloatingLabel
+  FloatingLabel,
 } from "react-bootstrap";
 
 import { ToastContainer, toast } from "react-toastify";
@@ -39,70 +39,63 @@ const Signin = () => {
     console.log(data);
   };
   return (
-
-
-      <Container fluid>
-        <Row>
-          <Navbar bg="dark" data-bs-theme="dark">
-            <Container>
-              <Navbar.Brand>Movies Finder App</Navbar.Brand>
-              <Navbar.Toggle />
-              <Navbar.Collapse className="justify-content-end">
-                <Nav className=" ">
-                  <Nav.Link href="/">Back</Nav.Link>
-                  <Nav.Link href="/signup">Signup</Nav.Link>
-                </Nav>
-              </Navbar.Collapse>
-            </Container>
-          </Navbar>
-          <Col></Col>
-          <Col>
-            
-            <Card className="mt-5">
+    <Container fluid>
+      <Row>
+        <Navbar bg="dark" data-bs-theme="dark">
+          <Container>
+            <Navbar.Brand>Movies Finder App</Navbar.Brand>
+            <Navbar.Toggle />
+            <Navbar.Collapse className="justify-content-end">
+              <Nav className=" ">
+                <Nav.Link href="/">Back</Nav.Link>
+                <Nav.Link href="/signup">Signup</Nav.Link>
+              </Nav>
+            </Navbar.Collapse>
+          </Container>
+        </Navbar>
+        <Col></Col>
+        <Col>
+          <Card className="mt-5">
             <Card.Body>
-            <Card.Title>User SignIn</Card.Title>
-            <hr />
-           
-                  <FloatingLabel
-                    controlId="floatingInput"
-                    label="Email address"
-                    className="mb-3"
-                  >
-                    <Form.Control
-                      type="email"
-                      placeholder="Email Address"
-                      name="email"
-                      {...register("email", { required: true })}
-                    />
-                  </FloatingLabel>
+              <Card.Title>User SignIn</Card.Title>
+              <hr />
 
-                  <FloatingLabel 
-                  controlId="floatingPassword"
-                   label="Password">
-                    <Form.Control
-                      type="password"
-                      placeholder="password"
-                      name="password"
-                      {...register("password", { required: true })}
-                    />
-                  </FloatingLabel>
-                  <Button
-                    onClick={handleSubmit(onSubmit)}
-                    type="submit"
-                    variant="outline-success"
-                    size="lg"
-                  >
-                    SignUp
-                  </Button>
-                  <ToastContainer />
+              <FloatingLabel
+                controlId="floatingInput"
+                label="Email address"
+                className="mb-3"
+              >
+                <Form.Control
+                  type="email"
+                  placeholder="Email Address"
+                  name="email"
+                  {...register("email", { required: true })}
+                />
+              </FloatingLabel>
+
+              <FloatingLabel controlId="floatingPassword" label="Password">
+                <Form.Control
+                  type="password"
+                  placeholder="password"
+                  name="password"
+                  {...register("password", { required: true })}
+                />
+              </FloatingLabel>
+              <Button
+                onClick={handleSubmit(onSubmit)}
+                type="submit"
+                variant="outline-success"
+                size="lg"
+              >
+                SignUp
+              </Button>
+              <ToastContainer />
             </Card.Body>
-            </Card>
-
-          </Col>
-          <Col></Col>
-        </Row>
-      </Container>
-
+          </Card>
+        </Col>
+        <Col></Col>
+      </Row>
+    </Container>
   );
 };
 

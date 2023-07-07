@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Signin from "./components/Signin";
 import Signup from "./components/Signup";
-// import Admin from "./components/Admin"
+import Admin from "./components/Admin";
 // import Dashboard from './components/Dashboard';
 import DashContainer from "./container/DashContainer";
 import Gene from "./components/Gene";
@@ -13,12 +13,13 @@ console.log("store", store);
 
 export default function App() {
   const user = JSON.parse(window.localStorage.getItem("user"));
+  const admin = JSON.parse(window.localStorage.getItem("admin"));
   return (
     <div>
       <Provider store={store}>
         <BrowserRouter>
           <Routes>
-            {user ? (
+            {user || admin ? (
               <Route
                 path="/signin"
                 element={
@@ -30,7 +31,8 @@ export default function App() {
             ) : (
               <Route path="/signin" element={<Signin />} />
             )}
-            {user ? (
+
+            {user || admin ? (
               <Route
                 path="/signup"
                 element={
@@ -43,12 +45,22 @@ export default function App() {
               <Route path="/signup" element={<Signup />} />
             )}
 
-
-          
-
-            {/* <Route path="/admin" element={<Admin/>} /> */}
-            <Route path="/" element={<Home />} />
             {user ? (
+              <Route
+                path="/admin"
+                element={
+                  <>
+                    <h1>404 error</h1>
+                  </>
+                }
+              />
+            ) : (
+              <Route path="/admin" element={<Admin />} />
+            )}
+
+            <Route path="/" element={<Home />} />
+
+            {user || admin ? (
               <Route path="/gen" element={<Gene />} />
             ) : (
               <Route
@@ -60,7 +72,8 @@ export default function App() {
                 }
               />
             )}
-            {user ? (
+
+            {user || admin ? (
               <Route path="/dash" element={<DashContainer />} />
             ) : (
               <Route
